@@ -1,12 +1,12 @@
-# -----------------------------------------------------------------
+# ------------------------------------------------------------------------
 # PyBank code
-# -----------------------------------------------------------------
+# ------------------------------------------------------------------------
 
 # import modules
 import os
 import csv
 
-# path from this code to the csv
+# path to the csv file
 budget_csv = os.path.join("Resources", "budget_data.csv")
 
 # variables & lists
@@ -18,14 +18,14 @@ dates = []
 
 
 
-# open the file
+# open the file to read
 with open(budget_csv) as csvfile: 
     
     # reader object
     csvreader = csv.reader(csvfile, delimiter = ',') 
 
     # skip header row
-    next(csvreader)
+    header = next(csvreader)
 
     # read the rest of the rows 
     for row in csvreader: 
@@ -52,18 +52,20 @@ for i in range(1, len(profits_losses)):
 # Calculate the average of the changes
 average_change = round(sum(changes) / len(changes), 2)
 
-# greatest increase and decrease
+# greatest increase and decrease in profits
 greatest_inc = max(changes)
 greatest_dec = min(changes)
 
 
-# dates of greatest increase and decrease
+# dates of greatest increase and decrease in profits
 great_inc_date = dates[changes.index(greatest_inc) + 1]
 great_dec_date = dates[changes.index(greatest_dec) + 1]
 
+# ------------------------------------------------------------------------
+# Print results in terminal
+# ------------------------------------------------------------------------
 
-
-# print results
+print("------------------------------------------------------")
 print("Financial Analysis")
 print("------------------------------------------------------")
 print(f"Total Months: {total_dates}")
@@ -72,8 +74,11 @@ print(f"Average Change: ${average_change}")
 print(f"Greatest Increase in Profits: {great_inc_date} (${greatest_inc})")
 print(f"Greatest Decrease in Profits: {great_dec_date} (${greatest_dec})")
 
+# ------------------------------------------------------------------------
+# Write results in text file
+# ------------------------------------------------------------------------
 
-# lines to write in text file
+# lines for text file
 lines = [
     "Financial Analysis\n",
     "------------------------------------------------------\n",
@@ -85,6 +90,7 @@ lines = [
 ]
 
 # write text file
-with open('output.txt', 'w') as file: 
+with open('financial_analysis.txt', 'w') as file: 
     file.writelines(lines)
+
 

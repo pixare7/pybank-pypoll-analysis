@@ -1,16 +1,16 @@
-# -----------------------------------------------------------------
+# ------------------------------------------------------------------------
 # PyPoll code
-# -----------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-#import modules
+# import modules
 import os
 import csv
 from collections import defaultdict
 
-# path from this code to the csv
+# path to csv file to read
 election_csv = os.path.join("Resources", "election_data.csv")
 
-# variables
+# initialize variables and dictionary
 total_votes = 0
 candidate_votes = defaultdict(int)
 
@@ -45,13 +45,18 @@ candidate_dict = dict(candidate_votes)
 winner = max(candidate_dict, key=candidate_dict.get)
 # max_votes = candidate_dict[winner]
 
+# ------------------------------------------------------------------------
+# Print results in terminal
+# ------------------------------------------------------------------------
+
 # print total votes
 print("------------------------------------------------")
 print("Election Results")
 print("------------------------------------------------")
 print(f"Total Votes: {total_votes}")
 print("------------------------------------------------")
-# Print the dictionary with candidate names, percent of votes, and vote counts
+
+# Print dictionary with candidate names, percent of votes, and vote counts
 for candidate, votes in candidate_dict.items():
     percentage = round((votes / total_votes) * 100, 3)
     print(f"{candidate}: {percentage}% ({votes}) votes")
@@ -59,12 +64,14 @@ print("------------------------------------------------")
 print(f"Winner: {winner}")
 print("------------------------------------------------")
 
-
+# ------------------------------------------------------------------------
+# Write results in text file
+# ------------------------------------------------------------------------
 
 # open and write text file
 output_file = "election_results.txt"
 with open(output_file, 'w') as file:
-    file.write("------------------------------------------------\n")
+
     file.write("Election Results\n")
     file.write("------------------------------------------------\n")
     file.write(f"Total Votes: {total_votes}\n")
