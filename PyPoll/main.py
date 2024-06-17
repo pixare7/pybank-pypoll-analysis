@@ -43,7 +43,6 @@ candidate_dict = dict(candidate_votes)
 
 # Calculate the winner
 winner = max(candidate_dict, key=candidate_dict.get)
-# max_votes = candidate_dict[winner]
 
 # ------------------------------------------------------------------------
 # Print results in terminal
