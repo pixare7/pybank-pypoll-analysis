@@ -37,3 +37,6 @@ The PyPoll project analyzes election data to calculate the total number of votes
     python pypoll.py
     ```
 4. Check the `analysis` directory for the output text files containing the results.
+
+## Results 
+
