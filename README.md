@@ -40,6 +40,6 @@ The PyPoll project analyzes election data to calculate the total number of votes
 
 ## Results 
 
-![Financial Analysis](https://github.com/pixare7/python-challenge/blob/main/PyBank/analysis/financial_analysis_pic.png) 
+<!-- ![Financial Analysis](https://github.com/pixare7/python-challenge/blob/main/PyBank/analysis/financial_analysis_pic.png) 
 
-![Election Results](https://github.com/pixare7/python-challenge/blob/main/PyPoll/analysis/election_results_pic.png) 
+![Election Results](https://github.com/pixare7/python-challenge/blob/main/PyPoll/analysis/election_results_pic.png) -->

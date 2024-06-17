@@ -84,7 +84,7 @@ file_path = 'analysis/financial_analysis.txt'
 # lines for text file
 lines = [
     "Financial Analysis\n",
-    "------------------------------------------------------\n",
+    "--------------------------------------------------\n",
     f"Total Months: {total_dates}\n",
     f"Total: ${net_profit_loss}\n",
     f"Average Change: ${average_change}\n",
