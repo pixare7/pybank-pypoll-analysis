@@ -68,9 +68,11 @@ print("------------------------------------------------")
 # Write results in text file
 # ------------------------------------------------------------------------
 
-# open and write text file
-output_file = "election_results.txt"
-with open(output_file, 'w') as file:
+# File path
+file_path = 'analysis/election_results.txt'
+
+# Open and write text file
+with open(file_path, 'w') as file:
 
     file.write("Election Results\n")
     file.write("------------------------------------------------\n")

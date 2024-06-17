@@ -78,6 +78,9 @@ print(f"Greatest Decrease in Profits: {great_dec_date} (${greatest_dec})")
 # Write results in text file
 # ------------------------------------------------------------------------
 
+# path to text file
+file_path = 'analysis/financial_analysis.txt'
+
 # lines for text file
 lines = [
     "Financial Analysis\n",
@@ -90,7 +93,7 @@ lines = [
 ]
 
 # write text file
-with open('financial_analysis.txt', 'w') as file: 
+with open(file_path, 'w') as file: 
     file.writelines(lines)
 
 
